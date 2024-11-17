@@ -17,4 +17,23 @@ public class Base : MonoBehaviour
 		_scanner = GetComponent<Scanner>();
 		_harvestBots = GetComponentsInChildren<HarvestBot>();
 	}
+
+	private void Start()
+	{
+		HarvestBot currentBot = GetFreeBot();
+
+		if (currentBot)
+			currentBot.SetTarget(_scanner.GetTarget());
+		else
+			Debug.LogError("No available harvest bots!");
+	}
+
+	private HarvestBot GetFreeBot()
+	{
+		foreach (HarvestBot bot in _harvestBots)
+			if (bot.IsBusy == false)
+				return bot;
+
+		return null;
+	}
 }

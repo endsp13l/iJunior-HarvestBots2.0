@@ -8,7 +8,10 @@ public class Scanner : MonoBehaviour
 	public Transform GetTarget()
 	{
 		if (_scannedObjects.Count <= 0)
+		{
 			Scan();
+			return null;
+		}
 
 		return _scannedObjects.Dequeue();
 	}
