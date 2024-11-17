@@ -14,7 +14,6 @@ public class BoxSpawner : MonoBehaviour
     private Coroutine _spawnCoroutine;
     private bool _isActive;
 
-
     private void OnEnable() => _isActive = true;
 
     private void Awake()

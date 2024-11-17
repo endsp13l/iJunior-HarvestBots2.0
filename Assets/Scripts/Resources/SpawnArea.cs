@@ -17,6 +17,4 @@ public class SpawnArea : MonoBehaviour
 
         return new Vector3(xPosition, yPosition, zPosition);
     }
-
-
 }
