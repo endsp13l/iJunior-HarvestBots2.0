@@ -30,6 +30,9 @@ public class HarvestBot : MonoBehaviour
 
 	private void MoveToTarget()
 	{
-		transform.Translate(_target.position - transform.position * _speed * Time.deltaTime);
+		if (_target == null)
+			return;
+
+		transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
 	}
 }

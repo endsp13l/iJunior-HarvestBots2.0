@@ -9,10 +9,12 @@ public class Scanner : MonoBehaviour
 	{
 		if (_scannedObjects.Count <= 0)
 		{
+			Debug.Log("Queue is empty");
 			Scan();
 			return null;
 		}
 
+		Debug.Log(_scannedObjects.Count);
 		return _scannedObjects.Dequeue();
 	}
 
